@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baijia.uqun.es.demo.dao.mapper.InviteCardTaskInfoPOMapper" >
+
+  <resultMap id="BaseResultMap" type="com.baijia.uqun.es.demo.dao.po.InviteCardTaskInfoPO" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="account_id" property="accountId" jdbcType="INTEGER" />
+    <result column="task_id" property="taskId" jdbcType="INTEGER" />
+    <result column="channel_id" property="channelId" jdbcType="INTEGER" />
+    <result column="app_id" property="appId" jdbcType="VARCHAR" />
+    <result column="data_date" property="dataDate" jdbcType="DATE" />
+    <result column="launch_num" property="launchNum" jdbcType="INTEGER" />
+    <result column="help_num" property="helpNum" jdbcType="INTEGER" />
+    <result column="un_follow_num" property="unFollowNum" jdbcType="INTEGER" />
+    <result column="invite_suc" property="inviteSuc" jdbcType="INTEGER" />
+    <result column="h5_num" property="h5Num" jdbcType="INTEGER" />
+    <result column="poster_num" property="posterNum" jdbcType="INTEGER" />
+    <result column="share_help_num" property="shareHelpNum" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    id, account_id, task_id, channel_id, app_id, data_date, launch_num, help_num, un_follow_num,
+    invite_suc, h5_num, poster_num, share_help_num, create_time, update_time
+  </sql>
+
+  <select id="listByIdRange" resultMap="BaseResultMap">
+    SELECT
+      <include refid="Base_Column_List"/>
+    FROM
+      um_data.data_invite_card_task_info
+    WHERE
+      id &gt; #{start}
+    AND
+      id &lt;= #{end}
+  </select>
+
+</mapper>

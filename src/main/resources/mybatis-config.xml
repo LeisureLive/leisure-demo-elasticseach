@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!-- 默认是SIMPLE，还可以是REUSE和BATCH -->
+        <setting name="defaultExecutorType" value="REUSE"/>
+        <!-- 支持STDOUT_LOGGING或SLF4J或LOG4J -->
+        <setting name="logImpl" value="LOG4J"/>
+    </settings>
+
+    <typeAliases>
+        <package name="com.baijia.uqun.es.demo.dao.po"/>
+    </typeAliases>
+
+</configuration>
